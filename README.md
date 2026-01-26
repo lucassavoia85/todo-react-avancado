@@ -8,8 +8,8 @@ Este é um projeto de lista de tarefas desenvolvido com **React**. O objetivo é
 Este projeto foi construído utilizando as seguintes ferramentas:
 
 * **React.js** - Biblioteca principal para construção da interface.
-* **JavaScript (ES6+)** - Lógica do projeto.
-* **CSS / SASS** - Estilização e design responsivo.
+* **JavaScript** - Lógica do projeto.
+* **CSS** - Estilização e design responsivo.
 * **Git & GitHub** - Controle de versão e hospedagem.
 
  Como rodar o projeto localmente
