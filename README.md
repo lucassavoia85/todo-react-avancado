@@ -1,9 +1,9 @@
 # todo-react-avancado
-# 📝 Todo List
+ Todo List
 
 Este é um projeto de lista de tarefas desenvolvido com **React**. O objetivo é permitir que o usuário gerencie suas atividades diárias de forma simples e intuitiva, podendo adicionar, remover e marcar tarefas como concluídas.
 
-## 🚀 Tecnologias Utilizadas
+ Tecnologias Utilizadas
 
 Este projeto foi construído utilizando as seguintes ferramentas:
 
@@ -12,7 +12,7 @@ Este projeto foi construído utilizando as seguintes ferramentas:
 * **CSS / SASS** - Estilização e design responsivo.
 * **Git & GitHub** - Controle de versão e hospedagem.
 
-## 📦 Como rodar o projeto localmente
+ Como rodar o projeto localmente
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto na sua máquina:
 
