@@ -1,5 +1,5 @@
 # todo-react-avancado
-# 📝 Todo List - [Nome do Projeto]
+# 📝 Todo List
 
 Este é um projeto de lista de tarefas desenvolvido com **React**. O objetivo é permitir que o usuário gerencie suas atividades diárias de forma simples e intuitiva, podendo adicionar, remover e marcar tarefas como concluídas.
 
