@@ -11,7 +11,7 @@ Este projeto foi construído utilizando as seguintes ferramentas:
 * **JavaScript** - Lógica do projeto.
 * **CSS** - Estilização e design responsivo.
 * **Git & GitHub** - Controle de versão e hospedagem.
-
+* Recoil*
  Como rodar o projeto localmente
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto na sua máquina:
