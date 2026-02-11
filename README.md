@@ -8,8 +8,8 @@ Este é um projeto de lista de tarefas desenvolvido com **React**. O objetivo é
 Este projeto foi construído utilizando as seguintes ferramentas:
 
 * **React.js** - Biblioteca principal para construção da interface.
-* **JavaScript (ES6+)** - Lógica do projeto.
-* **CSS / SASS** - Estilização e design responsivo.
+* **JavaScript** - Lógica do projeto.
+* **CSS** - Estilização e design responsivo.
 * **Git & GitHub** - Controle de versão e hospedagem.
 
  Como rodar o projeto localmente
@@ -21,5 +21,5 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto na sua má
    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
    cd todo-react-avancado
    npm install
-   npm start
+   npm run dev
    O projeto abrirá automaticamente no seu navegador
