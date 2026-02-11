@@ -1,30 +1,62 @@
-import { useState, useContext, useMemo } from "react";
-import { TodoContext } from "./TodoContext";
+import { useState, useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import Tarefa from "./components/Tarefa"
 import "./components/App.css";
+import { tarefasState, filtroState, tarefasFiltradasState } from "./state/storage";
 
+const API_URL = 'https://crudcrud.com/api/907de55b289745a0b6a388b785df8e89/tarefa';
 
 function App() {
 
-  const { tarefas, filtro, setFiltro, addTarefa, deleteTarefa, toggleTarefa } = useContext(TodoContext);
+  const [tarefas, setTarefas] = useRecoilState(tarefasState);
+  const [filtro, setFiltro] = useRecoilState(filtroState);
+  const tarefasFiltradas = useRecoilValue(tarefasFiltradasState);
+
   const [adicionarTarefa, setAdicionarTarefa] = useState('');
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => setTarefas(data))
+      .catch(err => console.error("Erro ao carregar tarefas", err));
+  }, [setTarefas]);
 
-  if(adicionarTarefa.trim() === '') return;
+  const addTarefa = (texto) => {
+    const nova = { texto, concluida: false };
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(nova)
+    })
+      .then(res => res.json())
+      .then(tarefaCriada => setTarefas(prev => [...prev, tarefaCriada]));
+  };
 
+  const deleteTarefa = (id) => {
+    fetch(`${API_URL}/${id}`, { method: 'DELETE' })
+      .then(res => {
+        if (res.ok) setTarefas(prev => prev.filter(t => t._id !== id));
+      });
+  };
+
+  const toggleTarefa = (id, texto, concluida) => {
+    const tarefaAtualizada = { texto, concluida: !concluida };
+    fetch(`${API_URL}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(tarefaAtualizada)
+    })
+      .then(res => {
+        if (res.ok) setTarefas(prev => prev.map(t => t._id === id ? { ...t, concluida: !concluida } : t));
+      });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (adicionarTarefa.trim() === '') return;
     addTarefa(adicionarTarefa.trim())
-      .then(() => setAdicionarTarefa(''));
+    setAdicionarTarefa('');
   }
-
-  const tarefasFiltradas = useMemo(() => {
-    return tarefas.filter((tarefa) => {
-      if (filtro === 'pendentes') return !tarefa.concluida;
-      if (filtro === 'concluidas') return tarefa.concluida;
-      return true;
-    });
-  }, [tarefas, filtro]);
 
   return (
   <main>
