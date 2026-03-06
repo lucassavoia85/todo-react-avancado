@@ -18,7 +18,7 @@ Siga os passos abaixo para configurar o ambiente e executar o projeto na sua má
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+   git clone
    cd todo-react-avancado
    npm install
    npm run dev
