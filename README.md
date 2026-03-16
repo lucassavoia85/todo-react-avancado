@@ -11,14 +11,14 @@ Este projeto foi construído utilizando as seguintes ferramentas:
 * **JavaScript** - Lógica do projeto.
 * **CSS** - Estilização e design responsivo.
 * **Git & GitHub** - Controle de versão e hospedagem.
-
+* Recoil*
  Como rodar o projeto localmente
 
 Siga os passos abaixo para configurar o ambiente e executar o projeto na sua máquina:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+   git clone
    cd todo-react-avancado
    npm install
    npm run dev
